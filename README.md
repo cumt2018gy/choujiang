@@ -4,6 +4,8 @@
 抽奖功能 的 Web 方式实现，如下图所示：
 
 
+![](doc/snap/1.png)
+
 ## 英文单词 ##
 
 lottery: 运气、彩票
@@ -127,5 +129,7 @@ if (deta < 1) {
 
 
 
-# Github源代码 #
+# 源代码 #
 
+Github 源代码地址：
+https://github.com/lvye1221/choujiang.git
