@@ -5,9 +5,17 @@
 		<title>抽奖</title>
 		
 		<style>
+
+h3 {
+    text-align: center;
+    font-size: 30px;
+}
+
 /* 抽奖盘盒子 */
 .lottery-box { 
 	position: relative;
+	width: 500px;
+    margin: 0 auto;
 }
 
 /* 抽奖盘转盘 */
@@ -37,6 +45,8 @@
 		
 	</head>
 	<body>
+
+	    <h3> 幸运大抽奖！ Go, Go, Go! </h3>
 		
 		<div class="lottery-box">
 			<div class="plate" id="plate"></div>
@@ -49,13 +59,24 @@
 	
 	<script>
 	
-	// 获取奖牌和手型
-	var oPlate = $("#plate");
-	var oHand = $("#hand");
-	
-	// 奖项设置
-	var prize = 2;
-	
+// 获取奖牌和手型
+var oPlate = $("#plate");
+var oHand = $("#hand");
+
+// 奖项设置
+var prize = 2;
+
+oHand.click(startGame);
+
+
+function startGame() {
+	setPrize(1);
+}
+
+function setPrize(prize) {
+
+	oHand.unbind("click");
+
 	// 需要找到图片角度与奖项直接的关系
 	var degree = 360 - (prize - 1) * 45;
 	
@@ -90,9 +111,12 @@
 			setTimeout(function() {
 				alert('恭喜您中了' + prize + '等奖!');
 			}, 300);
+
+			oHand.click(startGame);
 		}
 		
 	}, 200);
+}
 	
 	</script>
 	
